@@ -19,7 +19,9 @@ jobs:
       - run: node --version 
       - salesforce-sfdx/install:
           version: latest
-          
+      
+      - run: sfdx force:org:list
+
 workflows:
   example-workflow:
     jobs:
