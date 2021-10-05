@@ -20,7 +20,9 @@ jobs:
       - salesforce-sfdx/install:
           version: latest
       
-      - run: sfdx force:org:list
+      - run:
+            name: get SFDX version
+            command: sfdx -v 
 
 workflows:
   example-workflow:
