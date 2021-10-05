@@ -6,7 +6,7 @@ version: 2.1
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 orbs:
   node: circleci/node@4.7.0
-
+  salesforce-sfdx: circleci/salesforce-sfdx@2.2.0
 jobs:
   example-job:
     docker:
@@ -17,6 +17,9 @@ jobs:
           install-yarn: true 
           lts: true
       - run: node --version 
+      - salesforce-sfdx/install:
+          version: latest
+          
 workflows:
   example-workflow:
     jobs:
